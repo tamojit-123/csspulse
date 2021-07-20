@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #263238;
+}
+.pulse {
+    background-color: #f39494;
+    height: 20vmax;
+    width: 20vmax;
+    border-radius: 100%;
+    position: relative;
+}
+
+.heart {
+    background-color: red;
+    display: inline-block;
+    height: 30px;
+    margin-top: 80px;
+    margin-left: 80px;
+    position: absolute;
+    top: 0;
+    transform: rotate(-45deg);
+    width: 30px;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+.heart:before {
+    top: -15px;
+    left: 0;
+}
+
+.heart:after {
+    left: 15px;
+    top: 0;
+}
+
+.ring {
+    position: absolute;
+    background-color: inherit;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    opacity: 0.8;
+    animation: pulsing 2s ease-out infinite;
+}
+.ring:nth-of-type(1) {
+    animation-delay: -0.5s;
+}
+.ring:nth-of-type(2) {
+    animation-delay: -1s;
+}
+.ring:nth-of-type(3) {
+    animation-delay: -1.5s;
+}
+@keyframes pulsing {
+    100% {
+        transform: scale(1.75);
+        opacity: 0;
+    }
+}
